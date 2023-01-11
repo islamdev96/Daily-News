@@ -1,0 +1,91 @@
+import 'package:flutter/material.dart';
+import 'constants.dart';
+import 'elevated_button_widget.dart';
+
+class DrawerWidget extends StatelessWidget {
+  const DrawerWidget({super.key});
+  static const routeName = '/drawer';
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    return ListView(
+      children: [
+        DrawerHeader(
+          decoration: const BoxDecoration(
+              // color: ThemeBackgroundColorPage(context),
+              ),
+          child: SizedBox(
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: MediaQuery.of(context).size.width * 0.4,
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: MediaQuery.of(context).size.width * 0.15,
+                backgroundImage: const AssetImage(
+                  'assets/image/islam3.png',
+                ),
+              ),
+            ),
+          ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            const ElevatedButtonWidget(
+              color: kNavBarColor,
+              link:
+                  'https://play.google.com/store/apps/developer?id=ISLAM+SAYED',
+              text: 'Google Play',
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            ElevatedButtonWidget(
+              color: Colors.green[800]!,
+              link: 'https://api.whatsapp.com/send?phone=201065807020',
+              text: 'WhatsApp',
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            const ElevatedButtonWidget(
+              color: Colors.blueAccent,
+              link: 'https://facebook.com/Flutter.Dart2',
+              text: 'Facebook',
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            const ElevatedButtonWidget(
+              color: Colors.black,
+              link: 'https://github.com/islamdev96',
+              text: 'GitHub',
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            const ElevatedButtonWidget(
+              color: Color(0xFFE10A43),
+              link: 'https://api.whatsapp.com/send?phone=201065807020',
+              text: '01065807020',
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            const ElevatedButtonWidget(
+              color: kNavBarColor,
+              link:
+                  'https://drive.google.com/file/d/1fv2DB5rVdFk6s8a9NTOv7QKYrCQKT5XA/view?usp=share_link',
+              text: 'Download CV',
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
